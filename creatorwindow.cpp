@@ -1,9 +1,10 @@
--#include "creatorwindow.h"		
+-#include "mainwindow.h"
+		
  -#include "ui_creatorwindow.h"		
  -		
  -creatorWindow::creatorWindow(QWidget *parent) :		
  -    QMainWindow(parent),		
- -    ui(new Ui::creatorWindow)		
+ -    ui(new Ui::MainWindow)		
  -{		
  -    ui->setupUi(this);		
  -}		
