@@ -11,7 +11,6 @@
 
 using namespace std;
 
-//leo
 
 class Property{
   public:
@@ -40,6 +39,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     createObjects();
+    //populateUi();
 }
 
 MainWindow::~MainWindow()
@@ -84,16 +84,18 @@ void createXml(vector<Property> properties){
 
 
 }
-void populateUi(){
-    for(int i = 0; i < 6; i++){
-        Ui->propertyList.
-    }
-
+/**
+void MainWindow::populateUi(vector<Property> properties){
+        QListWidgetItem *newItem = new QListWidgetItem;
+        newItem->setText("itemText");
+        ui->propertyList->insertItem(1, newItem);
+        //create dynamic variable naming from this for shit
+        //where i left off
 }
+**/
 
 
-
-void MainWindow::on_propertyList_clicked(const QModelIndex &index)
+void MainWindow::on_formOpen_clicked()
 {
 
 }

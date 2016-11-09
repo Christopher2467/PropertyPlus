@@ -11,13 +11,16 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
+
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-private slots:
 
-    void on_propertyList_clicked(const QModelIndex &index);
+private slots:
+    //void MainWindow::populateUi(vector<Property> properties);
+
+    void on_formOpen_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -1,14 +1,15 @@
-#include "mainwindow.h"
-#include "ui_creatorwindow.h"		
+#include "creatorwindow.h"
+#include "ui_creatorwindow.h"
+#include <QCoreApplication>
 
-creatorWindow::creatorWindow(QWidget *parent) :		
-QMainWindow(parent),		
- ui(new Ui::MainWindow)		
- {		
- ui->setupUi(this);		
- }		
- 		
- creatorWindow::~creatorWindow()		
- {		
- delete ui;		
- }
+creatorwindow::creatorwindow(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::creatorwindow)
+{
+    ui->setupUi(this);
+}
+
+creatorwindow::~creatorwindow()
+{
+    delete ui;
+}
