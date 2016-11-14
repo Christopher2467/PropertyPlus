@@ -6,6 +6,7 @@
 
 QT       += core gui
 QT       += xml
+QT += qml quick
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -15,10 +16,10 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    creatorwindow.cpp
+    creator.cpp
 
 HEADERS  += mainwindow.h \
-    creatorwindow.h
+    creator.h
 
 FORMS    += mainwindow.ui \
-    creatorwindow.ui
+    creator.ui

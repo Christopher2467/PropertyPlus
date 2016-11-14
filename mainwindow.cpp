@@ -95,7 +95,7 @@ void MainWindow::populateUi(vector<Property> properties){
 **/
 
 
+
 void MainWindow::on_formOpen_clicked()
 {
-
 }

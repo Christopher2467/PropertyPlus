@@ -14,16 +14,6 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QListWidget" name="propertyList">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>256</width>
-      <height>281</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QPushButton" name="formOpen">
     <property name="geometry">
      <rect>
@@ -35,6 +25,16 @@
     </property>
     <property name="text">
      <string>PushButton</string>
+    </property>
+   </widget>
+   <widget class="QListView" name="propertyList">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>256</width>
+      <height>261</height>
+     </rect>
     </property>
    </widget>
   </widget>
