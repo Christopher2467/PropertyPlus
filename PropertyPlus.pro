@@ -23,3 +23,5 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui \
     creator.ui
+
+DISTFILES +=

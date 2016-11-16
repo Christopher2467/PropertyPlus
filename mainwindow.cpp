@@ -1,34 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <iostream>
-#include <string>
-#include <QFile>
-#include <QCoreApplication>
-#include <QStringList>
-#include <QTextStream>
-#include <QXmlStreamReader>
-#include <vector>
 
 using namespace std;
 
-
-class Property{
-  public:
-    int id;
-    string adress;
-    string tenants;
-    int term;
-    int rent;
-
-    Property(int i, string adr, string ten, int ter, int ren){
-        id = i;
-        adress = adr;
-        tenants = ten;
-        term = ter;
-        rent = ren;
-    }
-
-};
 
 void createXml(vector<Property> properties);
 void createObjects();
@@ -40,6 +14,19 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     createObjects();
     //populateUi();
+    // Create model
+    model = new QStringListModel(this);
+
+    // Make data
+    QStringList List;
+    List << "Clair de Lune" << "Reverie" << "Prelude";
+
+    // Populate our model
+    model->setStringList(List);
+
+    // Glue model and view together
+    ui->propertyList->setModel(model);
+
 }
 
 MainWindow::~MainWindow()
@@ -84,18 +71,8 @@ void createXml(vector<Property> properties){
 
 
 }
-/**
-void MainWindow::populateUi(vector<Property> properties){
-        QListWidgetItem *newItem = new QListWidgetItem;
-        newItem->setText("itemText");
-        ui->propertyList->insertItem(1, newItem);
-        //create dynamic variable naming from this for shit
-        //where i left off
-}
-**/
-
-
 
 void MainWindow::on_formOpen_clicked()
 {
+
 }
