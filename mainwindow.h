@@ -12,6 +12,12 @@
 #include <QTextStream>
 #include <QXmlStreamReader>
 #include <vector>
+#include <qqmlengine.h>
+#include <qqmlcontext.h>
+#include <qqml.h>
+#include <QtQuick/qquickitem.h>
+#include <QtQuick/qquickview.h>
+#include <QStandardItemModel>
 
 using namespace std;
 
@@ -44,18 +50,18 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+
     ~MainWindow();
 
-
 private slots:
-    //void MainWindow::populateUi(vector<Property> properties);
 
-    void on_formOpen_clicked();
+    void on_btnOpen_clicked();
+    void populateUi(vector<Property>);
+
 
 private:
-    QStringListModel *model;
-
     Ui::MainWindow *ui;
+
 };
 
 #endif // MAINWINDOW_H

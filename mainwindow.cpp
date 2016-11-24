@@ -1,11 +1,12 @@
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
 
 using namespace std;
 
 
 void createXml(vector<Property> properties);
-void createObjects();
+vector<Property> createObjects();
+void populateUi(vector<Property>  myproperty);
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -13,19 +14,26 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     createObjects();
-    //populateUi();
-    // Create model
-    model = new QStringListModel(this);
 
-    // Make data
-    QStringList List;
-    List << "Clair de Lune" << "Reverie" << "Prelude";
+    populateUi(createObjects());
 
-    // Populate our model
-    model->setStringList(List);
 
-    // Glue model and view together
-    ui->propertyList->setModel(model);
+}
+
+void MainWindow::populateUi(vector<Property> myproperty){
+    QStandardItemModel *model = new QStandardItemModel();
+    ui->propertyList->setModel( model );
+    QStandardItem *item;
+
+    cout << "----------------------";
+    cout << myproperty[1].adress;
+    cout << "----------------------";
+
+
+    item = new QStandardItem();
+    item->setData( "ass" , Qt::DisplayRole );
+    item->setEditable( false );
+    model->appendRow( item );
 
 }
 
@@ -34,7 +42,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void createObjects(){
+vector<Property> createObjects(){
     Property myproperty (1, "213fartstreet", "mr.dog", 20, 1000);
     Property myproperty1 (2, "123 WoofCrescent", "mr.Cat", 3, 940);
     Property myproperty2 (3, "Stephensons Streest", "Gary Johnson", 4, 900);
@@ -43,7 +51,10 @@ void createObjects(){
     Property myproperty5 (6, "MyDog View", "Cat fart", 5, 3323);
 
     vector<Property> properties {myproperty, myproperty1, myproperty2, mypropery3, myproperty4, myproperty5};
+
     createXml(properties);
+
+    return properties;
 }
 
 void createXml(vector<Property> properties){
@@ -69,10 +80,10 @@ void createXml(vector<Property> properties){
 
     file.close();
 
-
 }
 
-void MainWindow::on_formOpen_clicked()
+
+void MainWindow::on_btnOpen_clicked()
 {
 
 }
