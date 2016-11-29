@@ -4,9 +4,9 @@
 using namespace std;
 
 
-void createXml(vector<Property> properties);
-vector<Property> createObjects();
-void populateUi(vector<Property>  myproperty);
+//void createXml(vector<Property> properties);
+void createObjects();
+void populateUi(vector<Property> &myproperty);
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -15,7 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     createObjects();
 
-    populateUi(createObjects());
+    //populateUi(createObjects());
 
 
 }
@@ -36,28 +36,27 @@ void MainWindow::populateUi(vector<Property> myproperty){
     model->appendRow( item );
 
 }
-
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
-vector<Property> createObjects(){
+void createObjects(){
     Property myproperty (1, "213fartstreet", "mr.dog", 20, 1000);
     Property myproperty1 (2, "123 WoofCrescent", "mr.Cat", 3, 940);
     Property myproperty2 (3, "Stephensons Streest", "Gary Johnson", 4, 900);
     Property mypropery3 (4, "Burnamthopre Crescent", "Steve Jobs", 332, 1034);
-    Property myproperty4 (5, "Leachview Crescent", "Katie Williams", 7, 3001);
+    Property myproperty4 (5, "Leachvriew Crescent", "Katie Williams", 7, 3001);
     Property myproperty5 (6, "MyDog View", "Cat fart", 5, 3323);
 
     vector<Property> properties {myproperty, myproperty1, myproperty2, mypropery3, myproperty4, myproperty5};
 
-    createXml(properties);
-
-    return properties;
+    //createXml(properties);
+    populateUi(properties);
 }
 
-void createXml(vector<Property> properties){
+/**
+void createXml(vector<Property> propertes){
 
     QFile file("info.xml");
     file.open(QIODevice::WriteOnly);
@@ -81,7 +80,7 @@ void createXml(vector<Property> properties){
     file.close();
 
 }
-
+**/
 
 void MainWindow::on_btnOpen_clicked()
 {

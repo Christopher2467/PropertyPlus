@@ -25,16 +25,34 @@ class Property{
   public:
     int id;
     string adress;
-    string tenants;
-    int term;
-    int rent;
+    int unit;
+    int locker;
+    int parking;
+    int datePurchased;
+    string propManagement;
+    bool status;
+    double lease;
+    double taxes;
+    double maintenance;
+    double utilities;
+    double purchases;
+    double misc;
 
-    Property(int i, string adr, string ten, int ter, int ren){
+    Property(int i, string adr, int uni, int lock, int park, int date, string manage, bool statu, double leas, double taxs, double maint, double util, double purch, double mis){
         id = i;
         adress = adr;
-        tenants = ten;
-        term = ter;
-        rent = ren;
+        unit = uni;
+        locker = lock;
+        parking = park;
+        datePurchased = date;
+        propManagement = manage;
+        status = statu;
+        lease = leas;
+        taxes = taxs;
+        maintenance = maint;
+        utilities = util;
+        purchases = purch;
+        misc = mis;
     }
 
 };
@@ -53,10 +71,11 @@ public:
 
     ~MainWindow();
 
+    void populateUi();
+
 private slots:
 
     void on_btnOpen_clicked();
-    void populateUi(vector<Property>);
 
 
 private:
