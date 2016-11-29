@@ -30,7 +30,7 @@ class Property{
     int parking;
     int datePurchased;
     string propManagement;
-    bool status;
+    int status;
     double lease;
     double taxes;
     double maintenance;
@@ -38,7 +38,7 @@ class Property{
     double purchases;
     double misc;
 
-    Property(int i, string adr, int uni, int lock, int park, int date, string manage, bool statu, double leas, double taxs, double maint, double util, double purch, double mis){
+    Property(int i, string adr, int uni, int lock, int park, int date, string manage, int statu, double leas, double taxs, double maint, double util, double purch, double mis){
         id = i;
         adress = adr;
         unit = uni;

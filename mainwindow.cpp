@@ -4,9 +4,9 @@
 using namespace std;
 
 
-//void createXml(vector<Property> properties);
+void createXml(vector<Property> properties);
 void createObjects();
-void populateUi(vector<Property> &myproperty);
+void populateUi();
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -15,18 +15,14 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     createObjects();
 
-    //populateUi(createObjects());
-
-
 }
 
-void MainWindow::populateUi(vector<Property> myproperty){
+void MainWindow::populateUi(){
     QStandardItemModel *model = new QStandardItemModel();
     ui->propertyList->setModel( model );
     QStandardItem *item;
 
     cout << "----------------------";
-    cout << myproperty[1].adress;
     cout << "----------------------";
 
 
@@ -42,21 +38,15 @@ MainWindow::~MainWindow()
 }
 
 void createObjects(){
-    Property myproperty (1, "213fartstreet", "mr.dog", 20, 1000);
-    Property myproperty1 (2, "123 WoofCrescent", "mr.Cat", 3, 940);
-    Property myproperty2 (3, "Stephensons Streest", "Gary Johnson", 4, 900);
-    Property mypropery3 (4, "Burnamthopre Crescent", "Steve Jobs", 332, 1034);
-    Property myproperty4 (5, "Leachvriew Crescent", "Katie Williams", 7, 3001);
-    Property myproperty5 (6, "MyDog View", "Cat fart", 5, 3323);
+    Property myproperty (1, "213fartstreet", 32, 5, 3, 12041999, "manage co", 1, 555.21, 9992.1, 8221.2, 29191.2, 921.2, 23.1);
+    Property myproperty1 (2, "123 WoofCrescent", 32, 5, 3, 12041999, "manage co", 1, 555.21, 9992.1, 8221.2, 29191.2, 921.2, 23.1);
 
-    vector<Property> properties {myproperty, myproperty1, myproperty2, mypropery3, myproperty4, myproperty5};
+    vector<Property> properties {myproperty, myproperty1};
 
-    //createXml(properties);
-    populateUi(properties);
+    createXml(properties);
 }
 
-/**
-void createXml(vector<Property> propertes){
+void createXml(vector<Property> properties){
 
     QFile file("info.xml");
     file.open(QIODevice::WriteOnly);
@@ -67,20 +57,27 @@ void createXml(vector<Property> propertes){
 
     xmlWriter.writeStartElement("Townhouses");
 
-    for(int i = 0; i < 6; i++){
-    xmlWriter.writeStartElement(QString::fromStdString(to_string(properties[i].id)));
-    xmlWriter.writeTextElement("Adress", QString::fromStdString(properties[i].adress));
-    xmlWriter.writeTextElement("Tenants", QString::fromStdString(properties[i].tenants));
-    xmlWriter.writeTextElement("Term", QString::fromStdString(to_string(properties[i].term)));
-    xmlWriter.writeTextElement("Rent", QString::fromStdString(to_string(properties[i].rent)));
+    xmlWriter.writeStartElement(QString::fromStdString(to_string(properties[0].id)));
+    xmlWriter.writeTextElement("Adress", QString::fromStdString(properties[0].adress));
+    xmlWriter.writeTextElement("Unit Number", QString::fromStdString(to_string(properties[0].unit)));
+    xmlWriter.writeTextElement("Locker Number", QString::fromStdString(to_string(properties[0].locker)));
+    xmlWriter.writeTextElement("Parking Number", QString::fromStdString(to_string(properties[0].parking)));
+    xmlWriter.writeTextElement("Date Purchased", QString::fromStdString(to_string(properties[0].datePurchased)));
+    xmlWriter.writeTextElement("PropManagement", QString::fromStdString(properties[0].propManagement));
+    xmlWriter.writeTextElement("Status", QString::fromStdString(to_string(properties[0].status)));
+    xmlWriter.writeTextElement("Lease", QString::fromStdString(to_string(properties[0].lease)));
+    xmlWriter.writeTextElement("Taxes", QString::fromStdString(to_string(properties[0].taxes)));
+    xmlWriter.writeTextElement("Maintenance", QString::fromStdString(to_string(properties[0].maintenance)));
+    xmlWriter.writeTextElement("Utilities", QString::fromStdString(to_string(properties[0].utilities)));
+    xmlWriter.writeTextElement("Purchases", QString::fromStdString(to_string(properties[0].purchases)));
+    xmlWriter.writeTextElement("Misc", QString::fromStdString(to_string(properties[0].misc)));
 
     xmlWriter.writeEndElement();
-    }
+
 
     file.close();
 
 }
-**/
 
 void MainWindow::on_btnOpen_clicked()
 {
