@@ -16,10 +16,12 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    creator.cpp
+    creator.cpp \
+    global.cpp
 
 HEADERS  += mainwindow.h \
-    creator.h
+    creator.h \
+    global.h
 
 FORMS    += mainwindow.ui \
     creator.ui

@@ -18,6 +18,7 @@
 #include <QtQuick/qquickitem.h>
 #include <QtQuick/qquickview.h>
 #include <QStandardItemModel>
+#include <creator.h>
 
 using namespace std;
 
@@ -80,6 +81,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    creator *creatorWin;
+
 
 };
 

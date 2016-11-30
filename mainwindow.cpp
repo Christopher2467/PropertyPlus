@@ -35,6 +35,7 @@ void MainWindow::populateUi(){
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete creatorWin;
 }
 
 void createObjects(){
@@ -74,12 +75,14 @@ void createXml(vector<Property> properties){
 
     xmlWriter.writeEndElement();
 
-
     file.close();
 
 }
 
 void MainWindow::on_btnOpen_clicked()
 {
-
+    MainWindow.address = "yodel street";
+    MainWindow.unit = "1234";
+    creatorWin = new creator();
+    creatorWin -> show();
 }
