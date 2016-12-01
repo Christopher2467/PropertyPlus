@@ -1,6 +1,8 @@
 ﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+string globAddress = "122 thompson";
+
 using namespace std;
 
 
@@ -75,14 +77,14 @@ void createXml(vector<Property> properties){
 
     xmlWriter.writeEndElement();
 
+
     file.close();
 
 }
 
 void MainWindow::on_btnOpen_clicked()
 {
-    MainWindow.address = "yodel street";
-    MainWindow.unit = "1234";
-    creatorWin = new creator();
-    creatorWin -> show();
+    globAddress  = "yodel street";
+    informationWin = new Infor();
+    informationWin -> show();
 }

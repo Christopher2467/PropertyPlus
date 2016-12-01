@@ -20,5 +20,6 @@ creator::~creator()
 }
 
 void getInfo(){
-    cout << MainWindow.address;
+    //global varaible address
+    //cout << address;
 }

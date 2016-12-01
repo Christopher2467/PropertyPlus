@@ -19,6 +19,8 @@
 #include <QtQuick/qquickview.h>
 #include <QStandardItemModel>
 #include <creator.h>
+#include <infor.h>
+
 
 using namespace std;
 
@@ -59,6 +61,8 @@ class Property{
 };
 
 namespace Ui {
+extern string globAddress;
+
 class MainWindow;
 }
 
@@ -82,7 +86,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     creator *creatorWin;
-
+    Infor *informationWin;
 
 };
 
