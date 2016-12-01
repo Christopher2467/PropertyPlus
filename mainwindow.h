@@ -12,11 +12,6 @@
 #include <QTextStream>
 #include <QXmlStreamReader>
 #include <vector>
-#include <qqmlengine.h>
-#include <qqmlcontext.h>
-#include <qqml.h>
-#include <QtQuick/qquickitem.h>
-#include <QtQuick/qquickview.h>
 #include <QStandardItemModel>
 #include <creator.h>
 #include <infor.h>
@@ -61,7 +56,6 @@ class Property{
 };
 
 namespace Ui {
-extern string globAddress;
 
 class MainWindow;
 }

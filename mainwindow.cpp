@@ -9,6 +9,7 @@ using namespace std;
 void createXml(vector<Property> properties);
 void createObjects();
 void populateUi();
+void writeTxtFile();
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -16,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     createObjects();
-
+    writeTxtFile();
 }
 
 void MainWindow::populateUi(){
@@ -80,11 +81,27 @@ void createXml(vector<Property> properties){
 
     file.close();
 
-}
+} 
 
-void MainWindow::on_btnOpen_clicked()
-{
-    globAddress  = "yodel street";
+void MainWindow::on_btnOpen_clicked(){
     informationWin = new Infor();
     informationWin -> show();
+}
+
+void writeTxtFile(){
+    QString filename= "global.txt";
+    QFile file(filename);
+    file.open(QIODevice::WriteOnly);
+    QTextStream stream( &file );
+    stream << "something" << endl;
+    file.close();
+}
+
+void readTxtFile(){
+    QFile file("global.txt");
+    file.open(QIODevice::ReadOnly);
+    QTextStream input(&file);
+    QString address = input.readLine();
+    QString unit = input.readLine();
+    file.close();
 }
