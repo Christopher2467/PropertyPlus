@@ -1,15 +1,13 @@
 ﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-string globAddress = "122 thompson";
-
 using namespace std;
-
 
 void createXml(vector<Property> properties);
 void createObjects();
 void populateUi();
-void writeTxtFile();
+void writeTxtFile(string address, int unit);
+void readXml(string address, int unit);
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -17,22 +15,10 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     createObjects();
-    writeTxtFile();
+    readXml("213fartstreet", 32);
 }
 
 void MainWindow::populateUi(){
-    QStandardItemModel *model = new QStandardItemModel();
-    ui->propertyList->setModel( model );
-    QStandardItem *item;
-
-    cout << "----------------------";
-    cout << "----------------------";
-
-
-    item = new QStandardItem();
-    item->setData( "ass" , Qt::DisplayRole );
-    item->setEditable( false );
-    model->appendRow( item );
 
 }
 MainWindow::~MainWindow()
@@ -59,9 +45,9 @@ void createXml(vector<Property> properties){
     xmlWriter.setAutoFormatting(true);
     xmlWriter.writeStartDocument();
 
-    xmlWriter.writeStartElement("Townhouses");
+    //xmlWriter.writeStartElement(QString::fromStdString(to_string(properties[0].id)));
 
-    xmlWriter.writeStartElement(QString::fromStdString(to_string(properties[0].id)));
+    xmlWriter.writeStartElement("TownHouse");
     xmlWriter.writeTextElement("Adress", QString::fromStdString(properties[0].adress));
     xmlWriter.writeTextElement("Unit Number", QString::fromStdString(to_string(properties[0].unit)));
     xmlWriter.writeTextElement("Locker Number", QString::fromStdString(to_string(properties[0].locker)));
@@ -78,7 +64,6 @@ void createXml(vector<Property> properties){
 
     xmlWriter.writeEndElement();
 
-
     file.close();
 
 } 
@@ -88,12 +73,20 @@ void MainWindow::on_btnOpen_clicked(){
     informationWin -> show();
 }
 
-void writeTxtFile(){
+void readXml(string address, int unit){
+    QDomDocument document;
+    QFile xmlFile("info.xml");
+    xmlFile.open(QFile::ReadOnly | QFile::Text);
+
+}
+
+void writeTxtFile(string address, int unit){
     QString filename= "global.txt";
     QFile file(filename);
     file.open(QIODevice::WriteOnly);
     QTextStream stream( &file );
-    stream << "something" << endl;
+    stream << QString::fromStdString(address) << endl;
+    stream << QString::fromStdString(to_string(unit)) << endl;
     file.close();
 }
 

@@ -2,9 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QStringList>
-#include <QStringListModel>
-#include <QAbstractItemView>
 #include <iostream>
 #include <string>
 #include <QFile>
@@ -15,7 +12,11 @@
 #include <QStandardItemModel>
 #include <creator.h>
 #include <infor.h>
-
+#include <rapidxml.hpp>
+#include <rapidxml_iterators.hpp>
+#include <rapidxml_print.hpp>
+#include <rapidxml_utils.hpp>
+#include <QDomDocument>
 
 using namespace std;
 
