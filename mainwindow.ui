@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>269</height>
+    <width>441</width>
+    <height>291</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Property List</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QPushButton" name="btnOpen">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>30</y>
-      <width>80</width>
+      <x>20</x>
+      <y>70</y>
+      <width>91</width>
       <height>21</height>
      </rect>
     </property>
@@ -27,25 +27,12 @@
      <string>Open Property</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnEdit">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>90</y>
-      <width>80</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Edit Property</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="btnDelete">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>150</y>
-      <width>80</width>
+      <x>20</x>
+      <y>40</y>
+      <width>91</width>
       <height>21</height>
      </rect>
     </property>
@@ -53,49 +40,26 @@
      <string>Delete Property</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>40</y>
-      <width>71</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Enter Address</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QPushButton" name="AddProperty">
     <property name="geometry">
      <rect>
       <x>20</x>
       <y>100</y>
-      <width>51</width>
+      <width>91</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>Enter Unit</string>
+     <string>Add Property</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="txtAdress">
+   <widget class="QListWidget" name="propertyList">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>70</y>
-      <width>113</width>
-      <height>21</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="txtUnit">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>130</y>
-      <width>113</width>
-      <height>21</height>
+      <x>140</x>
+      <y>20</y>
+      <width>256</width>
+      <height>192</height>
      </rect>
     </property>
    </widget>
@@ -105,7 +69,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
+     <width>441</width>
      <height>20</height>
     </rect>
    </property>

@@ -2,6 +2,8 @@
 #define INFOR_H
 
 #include <QWidget>
+#include <QSql>
+#include<databsecontroller.h>
 
 namespace Ui {
 class Infor;
@@ -17,6 +19,8 @@ public:
 
 private:
     Ui::Infor *ui;
+    QSqlDatabase dbInfo;
+    DatabseController dbcInfo;
 };
 
 #endif // INFOR_H

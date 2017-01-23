@@ -12,32 +12,35 @@
 #include <QStandardItemModel>
 #include <creator.h>
 #include <infor.h>
-#include <rapidxml.hpp>
-#include <rapidxml_iterators.hpp>
-#include <rapidxml_print.hpp>
-#include <rapidxml_utils.hpp>
 #include <QDomDocument>
+#include <QtSql>
+#include <databsecontroller.h>
 
 using namespace std;
+
+/**
+ * Property Object creation that will
+ * be turned into xml
+ */
 
 class Property{
   public:
     int id;
-    string adress;
-    int unit;
-    int locker;
-    int parking;
-    int datePurchased;
-    string propManagement;
-    int status;
-    double lease;
-    double taxes;
-    double maintenance;
-    double utilities;
-    double purchases;
-    double misc;
+    QString adress;
+    QString unit;
+    QString locker;
+    QString parking;
+    QString datePurchased;
+    QString propManagement;
+    QString status;
+    QString lease;
+    QString taxes;
+    QString maintenance;
+    QString utilities;
+    QString purchases;
+    QString misc;
 
-    Property(int i, string adr, int uni, int lock, int park, int date, string manage, int statu, double leas, double taxs, double maint, double util, double purch, double mis){
+    Property(int i, QString adr, QString uni, QString lock, QString park, QString date, QString manage, QString statu, QString leas, QString taxs, QString maint, QString util, QString purch, QString mis){
         id = i;
         adress = adr;
         unit = uni;
@@ -76,13 +79,18 @@ public:
 private slots:
 
     void on_btnOpen_clicked();
+    void createObjects();
+    void on_AddProperty_clicked();
 
+    void on_btnDelete_clicked();
 
 private:
     Ui::MainWindow *ui;
+    //necesseary to be able to open new windows
     creator *creatorWin;
     Infor *informationWin;
-
+    QSqlDatabase dbMain;
+    DatabseController dbcMain;
 };
 
 #endif // MAINWINDOW_H

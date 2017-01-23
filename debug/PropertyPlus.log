@@ -1,0 +1,29 @@
+﻿  MOC creator.h
+  MOC infor.h
+  MOC mainwindow.h
+  MOC reports.h
+  UIC creator.ui
+  UIC infor.ui
+  UIC mainwindow.ui
+  UIC reports.ui
+  creator.cpp
+  databsecontroller.cpp
+  infor.cpp
+C:\Users\Christopher\Documents\PropertyPlus\mainwindow.h(93): error C2143: syntax error: missing ';' before '*'
+C:\Users\Christopher\Documents\PropertyPlus\mainwindow.h(93): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Christopher\Documents\PropertyPlus\mainwindow.h(93): error C2238: unexpected token(s) preceding ';'
+infor.cpp(28): error C2065: 'dbcInfo': undeclared identifier
+infor.cpp(28): error C2228: left of '.getSingleAllInfo' must have class/struct/union
+  infor.cpp(28): note: type is 'unknown-type'
+  main.cpp
+  mainwindow.cpp
+mainwindow.cpp(86): warning C4100: 'unit': unreferenced formal parameter
+  reports.cpp
+  moc_creator.cpp
+  moc_infor.cpp
+C:\Users\Christopher\Documents\PropertyPlus\mainwindow.h(93): error C2143: syntax error: missing ';' before '*'
+C:\Users\Christopher\Documents\PropertyPlus\mainwindow.h(93): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Christopher\Documents\PropertyPlus\mainwindow.h(93): error C2238: unexpected token(s) preceding ';'
+  moc_mainwindow.cpp
+  moc_reports.cpp
+  Generating Code...

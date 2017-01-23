@@ -7,6 +7,7 @@
 QT       += core gui
 QT       += xml
 QT += qml quick
+QT += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,11 +18,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     creator.cpp \
-    infor.cpp
+    infor.cpp \
+    databsecontroller.cpp
 
 HEADERS  += mainwindow.h \
     creator.h \
-    infor.h
+    infor.h \
+    databsecontroller.h
 
 FORMS    += mainwindow.ui \
     creator.ui \

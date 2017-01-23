@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TownHouse>
+    <Adress>Viking Lane</Adress>
+    <Unit Number>1402</Unit Number>
+    <Locker Number>1324</Locker Number>
+    <Parking Number>452</Parking Number>
+    <Date Purchased>2010-08-03</Date Purchased>
+    <PropManagement>NEVPL</PropManagement>
+    <Status>1</Status>
+    <Lease>1800</Lease>
+    <Taxes>4200</Taxes>
+    <Maintenance>100</Maintenance>
+    <Utilities>900</Utilities>
+    <Purchases>2562</Purchases>
+    <Misc>70</Misc>
+</TownHouse>
